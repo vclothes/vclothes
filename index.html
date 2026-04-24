@@ -979,6 +979,47 @@
   /* CORTA exatamente a borda branca */
   clip-path: inset(4px); 
 }
+/* ── CORREÇÕES PARA CELULAR ── */
+@media (max-width: 768px) {
+  /* Transforma a grade de 2 colunas em 1 coluna (empilhada) */
+  .sobre-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Ajusta o container das imagens para não vazar da tela */
+  .diario-imagens {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Remove as posições absolutas e tamanhos fixos gigantes das imagens */
+  .img1, .img2 {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    transform: none !important; /* Remove as rotações que atrapalham no celular */
+  }
+
+  /* Faz os cartões de contato ficarem responsivos */
+  .contact-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .contact-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
 </style>
 </head>
 <body>
